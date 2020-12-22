@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1608655545">
+  <project timestamp="1608655545">
+    <file name="/home/kszala/Projekty/bracket-generator/src/BracketGenerator.php">
+      <class name="BracketGenerator\BracketGenerator" namespace="global">
+        <metrics complexity="7" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="28" elements="30" coveredelements="30"/>
+      </class>
+      <line num="7" type="method" name="generate" visibility="public" complexity="5" crap="5" count="6"/>
+      <line num="9" type="stmt" count="6"/>
+      <line num="10" type="stmt" count="6"/>
+      <line num="12" type="stmt" count="6"/>
+      <line num="14" type="stmt" count="6"/>
+      <line num="15" type="stmt" count="6"/>
+      <line num="16" type="stmt" count="6"/>
+      <line num="17" type="stmt" count="6"/>
+      <line num="19" type="stmt" count="6"/>
+      <line num="20" type="stmt" count="6"/>
+      <line num="21" type="stmt" count="6"/>
+      <line num="23" type="stmt" count="6"/>
+      <line num="24" type="stmt" count="6"/>
+      <line num="25" type="stmt" count="6"/>
+      <line num="26" type="stmt" count="6"/>
+      <line num="30" type="stmt" count="6"/>
+      <line num="31" type="stmt" count="6"/>
+      <line num="35" type="stmt" count="6"/>
+      <line num="37" type="stmt" count="6"/>
+      <line num="38" type="stmt" count="6"/>
+      <line num="39" type="stmt" count="6"/>
+      <line num="40" type="stmt" count="6"/>
+      <line num="41" type="stmt" count="6"/>
+      <line num="45" type="stmt" count="6"/>
+      <line num="48" type="method" name="getNodesInStages" visibility="private" complexity="2" crap="2" count="6"/>
+      <line num="50" type="stmt" count="6"/>
+      <line num="51" type="stmt" count="6"/>
+      <line num="52" type="stmt" count="6"/>
+      <line num="54" type="stmt" count="6"/>
+      <line num="57" type="stmt" count="6"/>
+      <metrics loc="59" ncloc="55" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="28" elements="30" coveredelements="30"/>
+    </file>
+    <metrics files="1" loc="59" ncloc="55" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="28" elements="30" coveredelements="30"/>
+  </project>
+</coverage>
