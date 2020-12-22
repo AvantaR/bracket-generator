@@ -6,11 +6,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Set default PHP7.4
         run: sudo update-alternatives --set php /usr/bin/php7.4
-        
+
       - uses: actions/checkout@v1
 
       - name: Validate composer.json and composer.lock
@@ -23,8 +23,4 @@ jobs:
         run: composer run-script test-with-clover
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage.xml
-          flags: unittests
+        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.CODECOV_TOKEN }}
