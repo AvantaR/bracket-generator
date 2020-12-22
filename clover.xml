@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1608655545">
-  <project timestamp="1608655545">
+<coverage generated="1608656264">
+  <project timestamp="1608656264">
     <file name="/home/kszala/Projekty/bracket-generator/src/BracketGenerator.php">
       <class name="BracketGenerator\BracketGenerator" namespace="global">
         <metrics complexity="7" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="28" coveredstatements="28" elements="30" coveredelements="30"/>
