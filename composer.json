@@ -7,6 +7,10 @@
         "name": "Krzysztof Szala",
         "email": "avantar@gmail.com"
     }],
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-with-clover": "vendor/bin/phpunit --coverage-clover=coverage.xml"
+    },
     "require": {
         "php": ">=7.3.0"
     },
