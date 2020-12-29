@@ -27,19 +27,19 @@ class GeneratorTest extends TestCase
                 'id' => 1,
                 'round' => 1,
                 'game_in_round' => 1,
-                'next_game' => 3
+                'next_game_id' => 3
             ],
             [
                 'id' => 2,
                 'round' => 1,
                 'game_in_round' => 2,
-                'next_game' => 3
+                'next_game_id' => 3
             ],
             [
                 'id' => 3,
                 'round' => 2,
                 'game_in_round' => 1,
-                'next_game' => null
+                'next_game_id' => null
             ]
         ];
 
