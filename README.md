@@ -6,11 +6,11 @@ Simple Bracket Generator
 [![codecov](https://codecov.io/gh/AvantaR/bracket-generator/branch/main/graph/badge.svg?token=PADMJWGQCK)](https://codecov.io/gh/AvantaR/bracket-generator)
 [![Maintainability](https://api.codeclimate.com/v1/badges/93c4f57cd09db3c92c5f/maintainability)](https://codeclimate.com/github/AvantaR/bracket-generator/maintainability)
 
-###Requirements:
+### Requirements:
 
 1. PHP 7.4+
 
-###How to use:
+### How to use:
 
 1. Create new instance of the Bracket Generator:
 
@@ -18,7 +18,8 @@ Simple Bracket Generator
 $generator = new \BracketGenerator\Generator();
 ```
 
-2. Use the ```generate``` method to get array with bracket games. You need to pass the number of tournament participants:
+2. Use the ```generate``` method to get array with bracket games. You need to pass the number of tournament
+   participants:
 
 ```php
 $generator->generate(8);
