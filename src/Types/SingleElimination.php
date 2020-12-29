@@ -13,21 +13,14 @@ class SingleElimination implements Type
 
     public function generate(int $numberOfParticipants): array
     {
+        $gamesInFirstRound = $numberOfParticipants / 2;
+
         $this->setNumberOfGames($numberOfParticipants);
-        $this->setGamesQuantityInRounds($numberOfParticipants / 2);
+        $this->setGamesQuantityInRounds($gamesInFirstRound);
 
         $this->iterateOverGames();
 
         return $this->games;
-    }
-
-    private function setGamesQuantityInRounds(int $gamesInRound): void
-    {
-        $this->gamesInRounds[] = $gamesInRound;
-
-        if ($this->isNotLastRound($gamesInRound)) {
-            $this->setGamesQuantityInRounds($gamesInRound / 2);
-        }
     }
 
     private function setNumberOfGames(int $numberOfParticipants): void
@@ -35,29 +28,13 @@ class SingleElimination implements Type
         $this->numberOfGames = $numberOfParticipants - 1;
     }
 
-    /**
-     * @param int $gamesInRound
-     * @return bool
-     */
-    private function isNotLastRound(int $gamesInRound): bool
+    private function setGamesQuantityInRounds(int $gamesInRound, int $roundId = 1): void
     {
-        return $gamesInRound % 2 === 0;
-    }
+        $this->gamesInRounds[$roundId] = $gamesInRound;
 
-    /**
-     * @return mixed
-     */
-    private function getCurrentRoundMaxGames()
-    {
-        return $this->gamesInRounds[$this->currentRoundId - 1];
-    }
-
-    /**
-     * @return int
-     */
-    private function shouldIncreaseNextGameInRoundId(): int
-    {
-        return $this->gameInCurrentRound % 2;
+        if ($this->isNotLastRound($gamesInRound)) {
+            $this->setGamesQuantityInRounds($gamesInRound / 2, ++$roundId);
+        }
     }
 
     private function iterateOverGames(): void
@@ -91,9 +68,21 @@ class SingleElimination implements Type
         }
     }
 
-    /**
-     * @return bool
-     */
+    private function isNotLastRound(int $gamesInRound): bool
+    {
+        return $gamesInRound % 2 === 0;
+    }
+
+    private function getCurrentRoundMaxGames(): int
+    {
+        return $this->gamesInRounds[$this->currentRoundId] ?? 0;
+    }
+
+    private function shouldIncreaseNextGameInRoundId(): int
+    {
+        return $this->gameInCurrentRound % 2;
+    }
+
     private function isGameInSameRound(): bool
     {
         return $this->gameInCurrentRound < $this->getCurrentRoundMaxGames();
@@ -109,9 +98,6 @@ class SingleElimination implements Type
         $this->nextGameInRoundId = 0;
     }
 
-    /**
-     * @return bool
-     */
     private function isGameInLastRound(): bool
     {
         return $this->getCurrentRoundMaxGames() === 1;
