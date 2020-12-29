@@ -27,5 +27,4 @@ class TypeContext
 
         return new $strategyClass();
     }
-
 }

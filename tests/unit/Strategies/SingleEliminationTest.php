@@ -220,4 +220,3 @@ class SingleEliminationTest extends TestCase
         self::assertCount(15, $actualBracket);
     }
 }
-

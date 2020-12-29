@@ -48,4 +48,3 @@ class GeneratorTest extends TestCase
         self::assertEquals($expectedBracket, $actualBracket);
     }
 }
-

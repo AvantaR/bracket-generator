@@ -8,4 +8,3 @@ class NoBracketTypeStrategy extends Exception
 {
     protected $message = 'Couldn\'t find Bracket Type Strategy';
 }
-
