@@ -14,21 +14,21 @@ class GeneratorTest extends TestCase
         $expectedBracket = [
             [
                 'id' => 1,
-                'stage' => 1,
-                'stage_node' => 1,
-                'next_node' => 3
+                'round' => 1,
+                'game_in_round' => 1,
+                'next_game' => 3
             ],
             [
                 'id' => 2,
-                'stage' => 1,
-                'stage_node' => 2,
-                'next_node' => 3
+                'round' => 1,
+                'game_in_round' => 2,
+                'next_game' => 3
             ],
             [
                 'id' => 3,
-                'stage' => 2,
-                'stage_node' => 1,
-                'next_node' => null
+                'round' => 2,
+                'game_in_round' => 1,
+                'next_game' => null
             ]
         ];
 
@@ -37,7 +37,7 @@ class GeneratorTest extends TestCase
         self::assertEquals($expectedBracket, $actualBracket);
     }
 
-    public function test_it_returns_3_nodes_for_4_participants(): void
+    public function test_it_returns_3_games_for_4_participants(): void
     {
         $generator = new BracketGenerator();
 
@@ -53,45 +53,45 @@ class GeneratorTest extends TestCase
         $expectedBracket = [
             [
                 'id' => 1,
-                'stage' => 1,
-                'stage_node' => 1,
-                'next_node' => 5
+                'round' => 1,
+                'game_in_round' => 1,
+                'next_game' => 5
             ],
             [
                 'id' => 2,
-                'stage' => 1,
-                'stage_node' => 2,
-                'next_node' => 5
+                'round' => 1,
+                'game_in_round' => 2,
+                'next_game' => 5
             ],
             [
                 'id' => 3,
-                'stage' => 1,
-                'stage_node' => 3,
-                'next_node' => 6
+                'round' => 1,
+                'game_in_round' => 3,
+                'next_game' => 6
             ],
             [
                 'id' => 4,
-                'stage' => 1,
-                'stage_node' => 4,
-                'next_node' => 6
+                'round' => 1,
+                'game_in_round' => 4,
+                'next_game' => 6
             ],
             [
                 'id' => 5,
-                'stage' => 2,
-                'stage_node' => 1,
-                'next_node' => 7
+                'round' => 2,
+                'game_in_round' => 1,
+                'next_game' => 7
             ],
             [
                 'id' => 6,
-                'stage' => 2,
-                'stage_node' => 2,
-                'next_node' => 7
+                'round' => 2,
+                'game_in_round' => 2,
+                'next_game' => 7
             ],
             [
                 'id' => 7,
-                'stage' => 3,
-                'stage_node' => 1,
-                'next_node' => null
+                'round' => 3,
+                'game_in_round' => 1,
+                'next_game' => null
             ],
         ];
 
@@ -100,7 +100,7 @@ class GeneratorTest extends TestCase
         self::assertEquals($expectedBracket, $actualBracket);
     }
 
-    public function test_it_returns_7_nodes_for_8_participants(): void
+    public function test_it_returns_7_games_for_8_participants(): void
     {
         $generator = new BracketGenerator();
 
@@ -116,93 +116,93 @@ class GeneratorTest extends TestCase
         $expectedBracket = [
             [
                 'id' => 1,
-                'stage' => 1,
-                'stage_node' => 1,
-                'next_node' => 9
+                'round' => 1,
+                'game_in_round' => 1,
+                'next_game' => 9
             ],
             [
                 'id' => 2,
-                'stage' => 1,
-                'stage_node' => 2,
-                'next_node' => 9
+                'round' => 1,
+                'game_in_round' => 2,
+                'next_game' => 9
             ],
             [
                 'id' => 3,
-                'stage' => 1,
-                'stage_node' => 3,
-                'next_node' => 10
+                'round' => 1,
+                'game_in_round' => 3,
+                'next_game' => 10
             ],
             [
                 'id' => 4,
-                'stage' => 1,
-                'stage_node' => 4,
-                'next_node' => 10
+                'round' => 1,
+                'game_in_round' => 4,
+                'next_game' => 10
             ],
             [
                 'id' => 5,
-                'stage' => 1,
-                'stage_node' => 5,
-                'next_node' => 11
+                'round' => 1,
+                'game_in_round' => 5,
+                'next_game' => 11
             ],
             [
                 'id' => 6,
-                'stage' => 1,
-                'stage_node' => 6,
-                'next_node' => 11
+                'round' => 1,
+                'game_in_round' => 6,
+                'next_game' => 11
             ],
             [
                 'id' => 7,
-                'stage' => 1,
-                'stage_node' => 7,
-                'next_node' => 12
+                'round' => 1,
+                'game_in_round' => 7,
+                'next_game' => 12
             ],
             [
                 'id' => 8,
-                'stage' => 1,
-                'stage_node' => 8,
-                'next_node' => 12
+                'round' => 1,
+                'game_in_round' => 8,
+                'next_game' => 12
             ],
             [
                 'id' => 9,
-                'stage' => 2,
-                'stage_node' => 1,
-                'next_node' => 13
+                'round' => 2,
+                'game_in_round' => 1,
+                'next_game' => 13
             ],
             [
                 'id' => 10,
-                'stage' => 2,
-                'stage_node' => 2,
-                'next_node' => 13
+                'round' => 2,
+                'game_in_round' => 2,
+                'next_game' => 13
             ],
             [
                 'id' => 11,
-                'stage' => 2,
-                'stage_node' => 3,
-                'next_node' => 14
+                'round' => 2,
+                'game_in_round' => 3,
+                'next_game' => 14
             ],
             [
                 'id' => 12,
-                'stage' => 2,
-                'stage_node' => 4,
-                'next_node' => 14
+                'round' => 2,
+                'game_in_round' => 4,
+                'next_game' => 14
             ],
             [
                 'id' => 13,
-                'stage' => 3,
-                'stage_node' => 1,
-                'next_node' => 15
+                'round' => 3,
+                'game_in_round' => 1,
+                'next_game' => 15
             ],
             [
                 'id' => 14,
-                'stage' => 3,
-                'stage_node' => 2,
-                'next_node' => 15
+                'round' => 3,
+                'game_in_round' => 2,
+                'next_game' => 15
             ],
             [
                 'id' => 15,
-                'stage' => 4,
-                'stage_node' => 1,
-                'next_node' => null
+                'round' => 4,
+                'game_in_round' => 1,
+                'next_game' => null
             ],
         ];
 
@@ -211,7 +211,7 @@ class GeneratorTest extends TestCase
         self::assertEquals($expectedBracket, $actualBracket);
     }
 
-    public function test_it_returns_15_nodes_for_16_participants(): void
+    public function test_it_returns_15_games_for_16_participants(): void
     {
         $generator = new BracketGenerator();
 

@@ -6,54 +6,59 @@ class BracketGenerator
 {
     public function generate(int $numberOfParticipants): array
     {
-        $numberOfNodes = $numberOfParticipants - 1;
-        $nodesInStage = $this->getNodesInStages($numberOfParticipants);
+        $numberOfGames = $this->getNumberOfGames($numberOfParticipants);
+        $gamesInRounds = $this->getGamesQuantityInRounds($numberOfParticipants);
 
-        $nodes = [];
+        $games = [];
 
-        $currentStageId = 1;
-        $nodesInCurrentStage = 0;
+        $currentRoundId = 1;
+        $gameInCurrentRound = 0;
         $doubles = 0;
-        $previousMaxNodes = $nodesInStage[$currentStageId - 1];
+        $previousMaxNodes = $gamesInRounds[$currentRoundId - 1];
 
-        for ($currentNodeNumber = 1; $currentNodeNumber <= $numberOfNodes; $currentNodeNumber++) {
-            if ($nodesInCurrentStage < $nodesInStage[$currentStageId - 1]) { // Check if still in same stage
-                $nodesInCurrentStage++;
+        for ($currentGameId = 1; $currentGameId <= $numberOfGames; $currentGameId++) {
+            if ($gameInCurrentRound < $gamesInRounds[$currentRoundId - 1]) { // Check if still in same stage
+                $gameInCurrentRound++;
             } else { // If next stage
-                $currentStageId++;
-                $previousMaxNodes += $nodesInStage[$currentStageId-1];
-                $nodesInCurrentStage = 1;
+                $currentRoundId++;
+                $previousMaxNodes += $gamesInRounds[$currentRoundId - 1];
+                $gameInCurrentRound = 1;
                 $doubles = 0;
             }
 
             // Skip matches
-            if ($nodesInCurrentStage % 2) {
+            if ($gameInCurrentRound % 2) {
                 $doubles++;
             }
 
             // If there is no next stage – set null
-            $nextNode = $nodesInStage[$currentStageId-1] > 1 ? $previousMaxNodes + $doubles : null;
+            $nextGame = $gamesInRounds[$currentRoundId - 1] > 1 ? $previousMaxNodes + $doubles : null;
 
-            $nodes[] = [
-                'id' => $currentNodeNumber,
-                'stage' => $currentStageId,
-                'stage_node' => $nodesInCurrentStage,
-                'next_node' => $nextNode
+            $games[] = [
+                'id' => $currentGameId,
+                'round' => $currentRoundId,
+                'game_in_round' => $gameInCurrentRound,
+                'next_game' => $nextGame
             ];
         }
 
-        return $nodes;
+        return $games;
     }
 
-    private function getNodesInStages(int $numberOfParticipants, array $nodesInStage = []): array
+    private function getGamesQuantityInRounds(int $numberOfParticipants, array $gamesQuantityInStages = []): array
     {
         if ($numberOfParticipants % 2 === 0) {
             $maxNodesInStage = $numberOfParticipants / 2;
-            $nodesInStage[] = $maxNodesInStage;
+            $gamesQuantityInStages[] = $maxNodesInStage;
 
-            $nodesInStage = $this->getNodesInStages($maxNodesInStage, $nodesInStage);
+            $gamesQuantityInStages = $this->getGamesQuantityInRounds($maxNodesInStage, $gamesQuantityInStages);
         }
 
-        return $nodesInStage;
+        return $gamesQuantityInStages;
+    }
+
+    private function getNumberOfGames(int $numberOfParticipants): int
+    {
+        return $numberOfParticipants - 1;
     }
 }
