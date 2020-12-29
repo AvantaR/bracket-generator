@@ -1,8 +1,8 @@
 <?php
 
-namespace BracketGenerator;
+namespace BracketGenerator\Types;
 
-class BracketGenerator
+class SingleElimination implements Type
 {
     public function generate(int $numberOfParticipants): array
     {
