@@ -5,9 +5,9 @@ namespace BracketGenerator\Types;
 class SingleElimination implements Type
 {
     private array $games = [];
-    private int $currentRoundId = 1;
-    private int $numberOfGames = 0;
     private array $gamesInRounds = [];
+    private int $numberOfGames = 0;
+    private int $currentRoundId = 1;
     private int $gameInCurrentRound = 0;
     private int $nextGameInRoundId = 0;
 
