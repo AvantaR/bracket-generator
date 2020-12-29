@@ -11,7 +11,7 @@ class GeneratorTest extends TestCase
     public function test_it_throws_exception_for_non_valid_bracket_type(): void
     {
         $this->expectException(NoBracketTypeStrategy::class);
-
+        $this->expectExceptionMessage('Couldn\'t find Bracket Type Strategy');
         new Generator(-1);
     }
 
