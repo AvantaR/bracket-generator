@@ -2,11 +2,20 @@
 
 namespace Tests\Strategies;
 
+use BracketGenerator\Exceptions\NotAPowerOfTwo;
 use BracketGenerator\Types\SingleElimination;
 use PHPUnit\Framework\TestCase;
 
 class SingleEliminationTest extends TestCase
 {
+    public function test_it_throws_exception_when_number_of_participants_is_not_power_of_two(): void
+    {
+        $singleElimination = new SingleElimination();
+        $this->expectException(NotAPowerOfTwo::class);
+
+        $singleElimination->generate(3);
+    }
+
     public function test_it_returns_bracket_for_4_participants(): void
     {
         $singleElimination = new SingleElimination();

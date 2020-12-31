@@ -2,6 +2,8 @@
 
 namespace BracketGenerator\Types;
 
+use BracketGenerator\Assertions;
+
 class SingleElimination implements Type
 {
     private array $games = [];
@@ -13,6 +15,8 @@ class SingleElimination implements Type
 
     public function generate(int $numberOfParticipants): array
     {
+        Assertions::isPowerOfTwo($numberOfParticipants);
+
         $gamesInFirstRound = $numberOfParticipants / 2;
 
         $this->setNumberOfGames($numberOfParticipants);
